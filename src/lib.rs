@@ -6,16 +6,21 @@ use generic_array::GenericArray;
 pub use digest::Digest;
 
 #[derive(Clone, Default)]
+/// Wraps a [`Hasher`] and provides it with [`Digest`] and [`DynDigest`] implementations.
+///
+/// [`Digest`]: ../digest/trait.Digest.html
+/// [`DynDigest`]: ../digest/trait.DynDigest.html
+/// [`Hasher`]: ../crc32fast/struct.Hasher.html
 pub struct Crc32(Hasher);
 
 impl Crc32 {
-    /// Create a new `Crc32` instance.
+    /// Creates a new `Crc32`.
     #[inline]
     pub fn new() -> Self {
         Self(Hasher::new())
     }
 
-    /// Create a new `Crc32` instance initialized with the given state.
+    /// Creates a new `Crc32` initialized with the given state.
     #[inline]
     pub fn from_state(state: u32) -> Self {
         Self(Hasher::new_with_initial(state))
