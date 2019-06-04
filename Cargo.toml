@@ -6,6 +6,10 @@ authors = ["Ayron Jungren <ayron@ayron.io>"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/ajungren/crc32_digest"
 description = "CRC32 implementation of digest::{Digest, DynDigest} using crc32fast"
+readme = "README.md"
+
+[badges]
+travis-ci = { repository = "ajungren/crc32_digest" }
 
 [dependencies]
 crc32fast = "1.2"

@@ -1,5 +1,10 @@
 # `crc32_digest`
 
+[![Build Status](https://travis-ci.org/ajungren/crc32_digest.svg?branch=master)](https://travis-ci.org/ajungren/crc32_digest)
+[![Crate](https://img.shields.io/crates/v/crc32_digest.svg)](https://crates.io/crates/crc32_digest)
+[![API](https://docs.rs/crc32_digest/badge.svg)](https://docs.rs/crc32_digest/)
+[![Minimum rustc version](https://img.shields.io/badge/rustc-1.32+-lightgray.svg)](https://github.com/ajungren/crc32_digest#requirements)
+
 An implementation of the [`digest`][crate:digest] crate's [`Digest`] and [`DynDigest`] traits using
 [`crc32fast`][crate:crc32fast].
 
@@ -9,7 +14,11 @@ Internally, the `Crc32` struct provided by this crate implements the [`FixedOutp
 blanket `impl` of [`Digest`] and [`DynDigest`] is provided by [`digest`][crate:digest] for types implementing those
 traits (along with `Clone` and `Default`).
 
+## Requirements
+
 Rust 1.32 or newer is required for `u32::to_be_bytes`.
+
+[`Write`] support requires the `std` feature of `digest` to be enabled.
 
 ## Usage
 
