@@ -1,10 +1,11 @@
 [package]
 name = "crc32_digest"
-version = "0.8.1"
+version = "0.8.2"
 edition = "2021"
 authors = ["Ayron Jungren <ayron@ayron.io>"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/ajungren/crc32_digest"
+repository = "https://github.com/lookbusy1344/crc32_digest"
+# repository = "https://github.com/ajungren/crc32_digest"
 description = "CRC32 implementation of digest::{Digest, DynDigest} using crc32fast"
 readme = "README.md"
 
