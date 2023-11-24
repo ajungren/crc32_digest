@@ -1,9 +1,8 @@
 # `crc32_digest`
 
 [![Build and Test](https://github.com/lookbusy1344/crc32_digest/actions/workflows/rust.yml/badge.svg)](https://github.com/lookbusy1344/crc32_digest/actions/workflows/rust.yml)
-[![Crate](https://img.shields.io/crates/v/crc32_digest.svg)](https://crates.io/crates/crc32_digest)
-[![API](https://docs.rs/crc32_digest/badge.svg)](https://docs.rs/crc32_digest/)
-[![Minimum rustc version](https://img.shields.io/badge/rustc-1.32+-lightgray.svg)](https://github.com/ajungren/crc32_digest#requirements)
+
+A fork of https://github.com/ajungren/crc32_digest to support the latest version of Digest, and Rust 1.74 (November 2023)
 
 An implementation of the [`digest`][crate:digest] crate's [`Digest`] and [`DynDigest`] traits using
 [`crc32fast`][crate:crc32fast].
