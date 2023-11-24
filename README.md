@@ -1,6 +1,6 @@
 # `crc32_digest`
 
-[![Build Status](https://travis-ci.org/ajungren/crc32_digest.svg?branch=master)](https://travis-ci.org/ajungren/crc32_digest)
+[![Build and Test](https://github.com/lookbusy1344/crc32_digest/actions/workflows/rust.yml/badge.svg)](https://github.com/lookbusy1344/crc32_digest/actions/workflows/rust.yml)
 [![Crate](https://img.shields.io/crates/v/crc32_digest.svg)](https://crates.io/crates/crc32_digest)
 [![API](https://docs.rs/crc32_digest/badge.svg)](https://docs.rs/crc32_digest/)
 [![Minimum rustc version](https://img.shields.io/badge/rustc-1.32+-lightgray.svg)](https://github.com/ajungren/crc32_digest#requirements)
@@ -16,7 +16,7 @@ traits (along with `Clone` and `Default`).
 
 ## Requirements
 
-Rust 1.32 or newer is required for `u32::to_be_bytes`.
+Updated for Rust 1.74 and Digest 0.10.7
 
 [`Write`] support requires the `std` feature of `digest` to be enabled.
 
@@ -28,9 +28,9 @@ use digest::Digest;
 
 fn main() {
     let mut crc32 = Crc32::new();
-    crc32.input(b"hello, world");
-    let result = crc32.result();
-    
+    crc32.update(b"hello, world");
+    let result = crc32.finalize();
+
     // Get checksum as a byte slice
     assert_eq!(result.as_slice(), &[0xff, 0xab, 0x72, 0x3a]);
     // Format checksum as a lowercase hexadecimal string
