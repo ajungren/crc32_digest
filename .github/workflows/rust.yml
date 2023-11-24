@@ -2,9 +2,9 @@ name: Build and Test
 
 on:
   push:
-    branches: [ "main", "rust_2021" ]
+    branches: [ "master", "rust_2021" ]
   pull_request:
-    branches: [ "main", "rust_2021" ]
+    branches: [ "master", "rust_2021" ]
 
 env:
   CARGO_TERM_COLOR: always
