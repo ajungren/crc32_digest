@@ -48,8 +48,8 @@ impl FixedOutput for Crc32 {
         // FixedOutput trait requires that the output is written into the given buffer of bytes
         // but crc32fast::Hasher::finalize() returns a u32, so we have to convert it
         let result = self.0.finalize();
-        let r2 = result.to_be_bytes();
-        out.copy_from_slice(&r2);
+        let bytes = result.to_be_bytes();
+        out.copy_from_slice(&bytes);
     }
 }
 
