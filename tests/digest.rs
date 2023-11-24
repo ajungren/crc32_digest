@@ -9,8 +9,8 @@ macro_rules! test {
         #[test]
         fn $name() {
             let mut crc32 = Crc32::new();
-            crc32.input($input);
-            let checksum = crc32.result();
+            crc32.update($input);
+            let checksum = crc32.finalize();
             assert_eq!(format!("{:x}", checksum), $hash);
         }
     };
@@ -26,8 +26,8 @@ test!(hash_ascending, b"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D
 #[test]
 fn reset() {
     let mut crc32 = Crc32::new();
-    crc32.input(b"hello, world");
+    crc32.update(b"hello, world");
     crc32.reset();
-    let checksum = crc32.result();
+    let checksum = crc32.finalize();
     assert_eq!(format!("{:x}", checksum), "00000000");
 }
